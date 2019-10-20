@@ -12,7 +12,9 @@ var senecaWebConfig = {
 var app = Express()
       .use( require('body-parser').json() )
       .use( context )
-      .listen(3000)
+      .listen(3000, ()=>{
+            console.log("Listening on port 3000")
+      })
 
 var seneca = require( 'seneca' )()
       .use( SenecaWeb, senecaWebConfig )

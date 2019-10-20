@@ -6,8 +6,12 @@ module.exports = function api( options ) {
       var operation = msg.args.params.operation
       var left = msg.args.query.left
       var right = msg.args.query.right
+      var total= left+right //error, de esta manera no suma
       console.log(left,right)
-      respond();
+      respond({"left":left,
+               "right": right,
+               "total": total  
+    });
     //   this.act( 'role:math', {
     //     cmd:   valid_ops[operation],
     //     left:  left,
